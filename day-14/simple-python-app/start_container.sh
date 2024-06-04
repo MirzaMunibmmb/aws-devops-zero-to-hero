@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-# Pull the Docker image from Docker Hub
-echo
+docker pull mirzamunibbaig/simple-python-flask-app:$CODEBUILD_BUILD_NUMBER
 
-# Run the Docker image as a container
-echo
+docker run –d –name simple-python-flask-app –p 8000:5000 mirzamunibbaig/simple-python-flask-app:$CODEBUILD_BUILD_NUMBER
