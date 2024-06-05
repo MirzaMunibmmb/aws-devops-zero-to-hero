@@ -2,10 +2,8 @@
 
 set -e
 
-env:
-  parameter-store:
-    DOCKER_HUB_ID: /simple-python-app/codebuild/build-number
-
+# Retrieve the build number from SSM Parameter Store
+build_number=$(aws ssm get-parameter --name "/simple-python-app/codebuild/build-number" --query "Parameter.Value" --output text)
 
 # Debug: Print the value of CODEBUILD_BUILD_NUMBER
 echo "CODEBUILD_BUILD_NUMBER: $DOCKER_HUB_ID"
