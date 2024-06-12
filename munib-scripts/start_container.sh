@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 set -e
 
 # Retrieve the build number from SSM Parameter Store
